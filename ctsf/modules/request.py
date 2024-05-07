@@ -32,7 +32,7 @@ def get_request(domain):
 
     for index, value in enumerate(req.json()):
         if value is not None:
-            subdomains.extend(value["name_value"].split('\n'))
+            subdomains.extend(value["name_value"].split("\n"))
 
     print("=" * 32)
 
