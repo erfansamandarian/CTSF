@@ -30,6 +30,8 @@ pip install .
 ### Virtual Environment 📦
 
 ```
+cd CTFS
+
 python -m venv venv
 
 source venv/bin/activate
