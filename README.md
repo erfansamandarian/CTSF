@@ -19,6 +19,12 @@ Remade to be installable with PIP.
 
 ## Installation 
 
+###  PyPi
+
+```
+pip install ctsf 
+```
+
 ###  System
 
 ```
