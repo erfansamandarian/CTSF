@@ -1,6 +1,6 @@
 # CTSF
 
-Certificate Transparency Subdomain Finder
+Certificate Transparency Subdomain Finder + WHOIS Data
 
 ```
 .------..------..------..------.
@@ -13,7 +13,7 @@ Certificate Transparency Subdomain Finder
 
 ## About 
 
-Tool to get subdomains via Certificate Transparency logs.
+Tool to get subdomains via Certificate Transparency logs and WHOIS Data.
 
 Remade to be installable with PIP.
 
