@@ -11,7 +11,7 @@ class Runner:
     def __str__(self) -> str:
         return f"{self.config}"
 
-    def run(self): # this code is disgusting
+    def run(self):  # this code is disgusting
         if self.config.domain is not None and self.config.who is False:
             get_request(self.config.domain)
         elif self.config.domain is not None and self.config.who is True:
