@@ -47,10 +47,20 @@ pip install .
 
 ## Usage 🃏
 
+CTSF
+
 ```
 ctfs --domain "google.com"
+```
+
+CTSF + WHOIS
+
+```
+ctfs --domain "google.com" --who
 ```
 
 ## Credits
 
 Sheila A. Berta: https://github.com/UnaPibaGeek/ctfr
+
+Richard Penman: https://github.com/richardpenman/whois

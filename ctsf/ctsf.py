@@ -12,6 +12,12 @@ def arguments():
         "--domain",
         help="Uniform Resource Locator",
     )
+    parser.add_argument(
+        "--who",
+        help="WHOIS Data",
+        default="false",
+        action="store_true",
+    )
     args = parser.parse_args()
     return Config(args)
 

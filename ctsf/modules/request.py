@@ -1,7 +1,7 @@
 import re
 import requests
 
-version = "1.0.1"  # can i change this in setup.py?
+version = "1.0.2"  # can i change this in setup.py?
 
 
 def banner():
