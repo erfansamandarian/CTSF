@@ -13,9 +13,9 @@ setup(
     author_email="mail@erfansamandarian.com",
     url="https://erfansamandarian.com/ctsf",
     license="MIT",
-    version="1.0.2",
+    version="1.0.3",
     packages=find_packages(),
-    install_requires=["requests"],
+    install_requires=["requests", "python-whois"],
     py_modules=["ctsf"],
     entry_points={"console_scripts": ["ctsf=ctsf:main"]},
 )
