@@ -31,12 +31,11 @@ def get_request(domain):
     req = requests.get("https://crt.sh/?q=%.{d}&output=json".format(d=target))
 
     for index, value in enumerate(req.json()):
-        if value is not None:
-            subdomains.extend(value["name_value"].split("\n"))
-
-    print("=" * 32)
+        subdomains.extend(value["name_value"].split("\n"))
 
     subdomains = list(sorted(set(subdomains)))  # todo: remove duplicates
+
+    print("=" * 32)
 
     for subdomain in subdomains:
         print("[+] :: {s}".format(s=subdomain))

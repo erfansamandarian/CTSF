@@ -11,6 +11,7 @@ def arguments():
     parser.add_argument(
         "--domain",
         help="Uniform Resource Locator",
+        required=True
     )
     parser.add_argument(
         "--who",
