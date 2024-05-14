@@ -13,7 +13,7 @@ setup(
     author_email="mail@erfansamandarian.com",
     url="https://erfansamandarian.com/ctsf",
     license="MIT",
-    version="1.0.3",
+    version="1.0.4",
     packages=find_packages(),
     install_requires=["requests", "python-whois"],
     py_modules=["ctsf"],
