@@ -8,11 +8,7 @@ def arguments():
     parser = argparse.ArgumentParser(
         prog="ctsf", description="Certificate Transparency Subdomain Finder"
     )
-    parser.add_argument(
-        "--domain",
-        help="Uniform Resource Locator",
-        required=True
-    )
+    parser.add_argument("--domain", help="Uniform Resource Locator", required=True)
     parser.add_argument(
         "--who",
         help="WHOIS Data",

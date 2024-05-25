@@ -1,5 +1,7 @@
-import whois
+from tabulate import tabulate
+from termcolor import colored
 import re
+import whois
 
 
 def clear_url(target):
@@ -7,43 +9,26 @@ def clear_url(target):
 
 
 def get_who(domain):
-    print("WHOIS DATA")
-    print("=" * 32)
     w = whois.whois(clear_url(domain))
-    print("Domain Name: {}".format(w.domain_name))
-    print("-" * 32)
-    print("Registrar: {}".format(w.registrar))
-    print("-" * 32)
-    print("WHOIS Server: {}".format(w.whois_server))
-    print("-" * 32)
-    print("Referral URL: {}".format(w.referral_url))
-    print("-" * 32)
-    print("Updated Date: {}".format(w.updated_date))
-    print("-" * 32)
-    print("Creation Date: {}".format(w.creation_date))
-    print("-" * 32)
-    print("Expiration Date: {}".format(w.expiration_date))
-    print("-" * 32)
-    print("Name Servers: {}".format(w.name_servers))
-    print("-" * 32)
-    print("Status: {}".format(w.status))
-    print("-" * 32)
-    print("Emails: {}".format(w.emails))
-    print("-" * 32)
-    print("DNSSEC: {}".format(w.dnssec))
-    print("-" * 32)
-    print("Name: {}".format(w.name))
-    print("-" * 32)
-    print("Org: {}".format(w.org))
-    print("-" * 32)
-    print("Address: {}".format(w.address))
-    print("-" * 32)
-    print("City: {}".format(w.city))
-    print("-" * 32)
-    print("State: {}".format(w.state))
-    print("-" * 32)
-    print("Registrant Postal Code: {}".format(w.registrant_postal_code))
-    print("-" * 32)
-    print("Country: {}".format(w.country))
-
-    print("=" * 32)
+    data = [
+        ["Domain Name", w.domain_name],
+        ["Registrar", w.registrar],
+        ["WHOIS Server", w.whois_server],
+        ["Referral URL", w.referral_url],
+        ["Updated Date", w.updated_date],
+        ["Creation Date", w.creation_date],
+        ["Expiration Date", w.expiration_date],
+        ["Name Servers", w.name_servers],
+        ["Status", w.status],
+        ["Emails", w.emails],
+        ["DNSSEC", w.dnssec],
+        ["Name", w.name],
+        ["Org", w.org],
+        ["Address", w.address],
+        ["City", w.city],
+        ["State", w.state],
+        ["Registrant Postal Code", w.registrant_postal_code],
+        ["Country", w.country],
+    ]
+    headers = [colored("Property", "red"), colored("Value", "red")]
+    print(tabulate(data, headers=headers, tablefmt="grid"))

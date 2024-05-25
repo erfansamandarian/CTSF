@@ -1,7 +1,9 @@
 import re
 import requests
+from tabulate import tabulate
+from termcolor import colored
 
-version = "1.0.4"  # can i change this in setup.py?
+version = "1.0.5"  # can i change this in setup.py?
 
 
 def banner():
@@ -33,11 +35,11 @@ def get_request(domain):
     for index, value in enumerate(req.json()):
         subdomains.extend(value["name_value"].split("\n"))
 
-    subdomains = list(sorted(set(subdomains)))  # todo: remove duplicates
+    subdomains = list(sorted(set(subdomains)))
 
-    print("=" * 32)
+    header = "Subdomain" if len(subdomains) == 1 else "Subdomains"
+    colored_header = colored(header, "red")
+    data = [{colored_header: subdomain} for subdomain in subdomains]
 
-    for subdomain in subdomains:
-        print("[+] :: {s}".format(s=subdomain))
-
-    print("=" * 32)
+    print(tabulate(data, headers="keys", tablefmt="grid"))
+    print()
