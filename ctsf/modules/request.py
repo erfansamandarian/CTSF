@@ -3,16 +3,13 @@ import requests
 from tabulate import tabulate
 from termcolor import colored
 
-version = "1.0.5"  # can i change this in setup.py?
-
-
-def banner():
+def banner(version):
     banner = """
 .------..------..------..------.
-|C.--. ||T.--. ||F.--. ||S.--. |
+|C.--. ||T.--. ||S.--. ||F.--. |
 | :/\: || :/\: || :(): || :/\: |
 | :\/: || (__) || ()() || :\/: |
-| '--'C|| '--'T|| '--'F|| '--'S|
+| '--'C|| '--'T|| '--'S|| '--'F|
 `------'`------'`------'`------'
 	Version: {v}
 	""".format(
@@ -25,8 +22,8 @@ def clear_url(target):
     return re.sub(".*www\.", "", target, 1).split("/")[0].strip()
 
 
-def get_request(domain):
-    banner()
+def get_request(domain, version):
+    banner(version)
     subdomains = []
     target = clear_url(domain)
 
